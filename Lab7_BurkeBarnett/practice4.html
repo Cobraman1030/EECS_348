@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- I can not get php to work for the life of me and I give in-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table</title>
+</head>
+<body>
+
+    <div>
+        <form method="post" action="">
+            <label for="number">Enter a number:</label>
+            <input type="number" id="number" name="number">
+            <input type="submit" value="Generate Table">
+        </form>
+    </div>
+
+    <div>
+    
+        <php>
+        <?php
+
+            echo "<h2>Multiplication Table up to $number</h2>";
+            echo "<table border='1'>";
+
+            // Print column indexes
+            echo "<tr><td>&nbsp;</td>";
+            for ($i = 1; $i <= $number; $i++) {
+                echo "<td>$i</td>";
+            }
+            echo "</tr>";
+            for ($i = 1; $i <= $number; $i++) {
+                echo "<tr><td>$i</td>";
+
+                for ($j = 1; $j <= $number; $j++) {
+                    echo "<td>" . ($i * $j) . "</td>";
+                }
+                echo "</tr>";
+            }
+            echo "</table>";
+        ?>
+        </php>
+    </div>
+
+</body>
+</html>

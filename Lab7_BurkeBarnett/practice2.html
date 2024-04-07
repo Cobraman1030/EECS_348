@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RGB Color and Border Width</title>
+    <style>
+        #colorParagraph {
+            padding: 20px;
+            border: 1px solid black;
+            width: 50%;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <p id="colorParagraph">
+            Hello, my name is WHAT? My name is WHO?, My name is ck-ck-ck-slim shady.
+        </p>
+        <form id="colorForm">
+            <label for="red">Red (0-255):</label>
+            <input type="number" id="red" name="red" min="0" max="255" value="0"><br><br>
+
+            <label for="green">Green (0-255):</label>
+            <input type="number" id="green" name="green" min="0" max="255" value="0"><br><br>
+
+            <label for="blue">Blue (0-255):</label>
+            <input type="number" id="blue" name="blue" min="0" max="255" value="0"><br><br>
+
+            <label for="borderWidth">Border Width (px):</label>
+            <input type="number" id="borderWidth" name="borderWidth" min="0" value="1"><br><br>
+
+            <label for="textRed">Text Color Red (0-255):</label>
+            <input type="number" id="textRed" name="textRed" min="0" max="255" value="0"><br><br>
+
+            <label for="textGreen">Text Color Green (0-255):</label>
+            <input type="number" id="textGreen" name="textGreen" min="0" max="255" value="0"><br><br>
+
+            <label for="textBlue">Text Color Blue (0-255):</label>
+            <input type="number" id="textBlue" name="textBlue" min="0" max="255" value="0"><br><br>
+            <button type="button" onclick="applyStyles()">Apply</button>
+        </form>
+    </div>
+
+    <script>
+        function applyStyles() {
+            let red = document.getElementById("red").value;
+            let green = document.getElementById("green").value;
+            let blue = document.getElementById("blue").value;
+            let borderWidth = document.getElementById("borderWidth").value;
+            let textRed = document.getElementById("textRed").value;
+            let textGreen = document.getElementById("textGreen").value;
+            let textBlue = document.getElementById("textBlue").value;
+            let paragraph = document.getElementById("colorParagraph");
+            paragraph.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+            paragraph.style.borderColor = `rgb(${red}, ${green}, ${blue})`;
+            paragraph.style.borderWidth = `${borderWidth}px`;
+            paragraph.style.color = `rgb(${textRed}, ${textGreen}, ${textBlue})`;
+        }
+    </script>
+
+</body>
+</html>
